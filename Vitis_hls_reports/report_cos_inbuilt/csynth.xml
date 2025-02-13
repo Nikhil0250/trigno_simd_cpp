@@ -1,0 +1,987 @@
+<profile>
+    <ReportVersion>
+        <Version>2024.2</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>artix7</ProductFamily>
+        <Part>xc7a35t-cpg236-1</Part>
+        <TopModelName>trig_approx</TopModelName>
+        <TargetClockPeriod>10.00</TargetClockPeriod>
+        <ClockUncertainty>2.00</ClockUncertainty>
+        <FlowTarget>vivado</FlowTarget>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>no</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>7.945</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>51</Best-caseLatency>
+            <Average-caseLatency>52</Average-caseLatency>
+            <Worst-caseLatency>54</Worst-caseLatency>
+            <Best-caseRealTimeLatency>0.510 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>0.520 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>0.540 us</Worst-caseRealTimeLatency>
+            <Interval-min>52</Interval-min>
+            <Interval-max>55</Interval-max>
+        </SummaryOfOverallLatency>
+        <SummaryOfViolations>
+            <IssueType>-</IssueType>
+            <ViolationType>-</ViolationType>
+            <SourceLocation>D:/TrignoApproxHSL/trig_src_inbuilt_cos.cpp:8</SourceLocation>
+        </SummaryOfViolations>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <BRAM_18K>8</BRAM_18K>
+            <DSP>85</DSP>
+            <FF>4940</FF>
+            <LUT>6643</LUT>
+            <URAM>0</URAM>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>100</BRAM_18K>
+            <DSP>90</DSP>
+            <FF>41600</FF>
+            <LUT>20800</LUT>
+            <URAM>0</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>s_axi_CTRL_AWVALID</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_AWREADY</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_AWADDR</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>6</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_WVALID</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_WREADY</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_WDATA</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_WSTRB</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_ARVALID</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_ARREADY</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_ARADDR</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>6</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_RVALID</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_RREADY</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_RDATA</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_RRESP</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_BVALID</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_BREADY</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_BRESP</name>
+            <Object>CTRL</Object>
+            <Type>pointer</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>trig_approx</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_rst_n</name>
+            <Object>trig_approx</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>interrupt</name>
+            <Object>trig_approx</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule MAX_DEPTH="4">
+            <ModuleName>trig_approx</ModuleName>
+            <InstancesList>
+                <Instance>
+                    <InstName>grp_sin_or_cos_double_s_fu_61</InstName>
+                    <ModuleName>sin_or_cos_double_s</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>61</ID>
+                    <InstancesList>
+                        <Instance>
+                            <InstName>grp_sin_or_cos_double_Pipeline_1_fu_362</InstName>
+                            <ModuleName>sin_or_cos_double_Pipeline_1</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>362</ID>
+                            <BindInstances>add_ln400_fu_84_p2 sel_tmp_fu_90_p2 out_bits_5_out sel_tmp2_fu_105_p2 out_bits_4_out sel_tmp4_fu_120_p2 out_bits_3_out icmp_ln400_fu_135_p2</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_sin_or_cos_double_Pipeline_2_fu_369</InstName>
+                            <ModuleName>sin_or_cos_double_Pipeline_2</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>369</ID>
+                            <BindInstances>icmp_ln401_fu_136_p2 add_ln401_fu_142_p2 sub_ln403_fu_156_p2 partselect_16ns_63ns_32ns_16_1_1_U4</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_sin_or_cos_double_Pipeline_3_fu_380</InstName>
+                            <ModuleName>sin_or_cos_double_Pipeline_3</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>380</ID>
+                            <BindInstances>icmp_ln414_fu_136_p2 add_ln414_fu_142_p2 sparsemux_9_2_32_1_1_U13 ctlz_32_32_1_1_U14</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_sin_or_cos_double_Pipeline_4_fu_392</InstName>
+                            <ModuleName>sin_or_cos_double_Pipeline_4</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>392</ID>
+                            <BindInstances>sparsemux_9_2_32_1_1_U25 shift_3_fu_165_p2 sub_ln423_fu_179_p2 select_ln423_fu_185_p3 ashr_ln423_fu_239_p2 shl_ln423_fu_245_p2 in_shift_fu_251_p3 icmp_ln424_fu_193_p2 add_ln421_fu_199_p2 or_ln424_fu_217_p2</BindInstances>
+                        </Instance>
+                    </InstancesList>
+                    <BindInstances>closepath_fu_459_p2 add_ln454_fu_825_p2 Ex_fu_830_p3 add_ln396_fu_465_p2 addr_fu_471_p3 shl_ln398_fu_501_p2 mul_170s_53ns_170_5_1_U40 k_fu_552_p3 Mx_bits_1_fu_562_p2 Mx_bits_3_fu_567_p3 ctlz_62_62_1_1_U44 shl_ln504_fu_860_p2 Ex_1_fu_875_p2 sub_ln506_fu_889_p2 select_ln506_fu_895_p3 lshr_ln506_fu_904_p2 shl_ln506_fu_909_p2 x_1_fu_914_p3 sparsemux_17_3_1_1_1_U41 mul_49ns_49ns_98_3_1_U36 mul_49ns_49ns_98_3_1_U36 mul_49ns_49ns_98_3_1_U37 mul_56ns_52s_108_3_1_U38 mul_49ns_44s_93_3_1_U35 mul_42ns_33ns_75_2_1_U34 mul_35ns_25ns_60_2_1_U33 Mx_2_fu_1118_p3 mul_64s_63ns_126_5_1_U39 Ex_3_fu_1202_p3 add_ln432_fu_1218_p2 newexp_fu_1228_p2 icmp_ln433_fu_1197_p2 or_ln433_fu_1242_p2 sparsemux_33_4_1_1_1_U42 sparsemux_33_4_1_1_1_U43 results_sign_fu_773_p3 icmp_ln271_fu_781_p2 icmp_ln271_1_fu_527_p2 and_ln271_fu_786_p2 icmp_ln282_fu_791_p2 xor_ln282_fu_796_p2 results_sign_1_fu_802_p2 select_ln282_fu_1261_p3 or_ln282_fu_1268_p2 results_exp_fu_1273_p3 select_ln282_2_fu_1281_p3 results_sig_fu_1288_p3 not_and_ln271_demorgan_fu_808_p2 not_and_ln271_fu_813_p2 results_sign_2_fu_819_p2 results_exp_1_fu_1296_p3 results_sig_1_fu_1303_p3 ref_4oPi_table_256_U fourth_order_double_sin_cos_K0_U fourth_order_double_sin_cos_K1_U fourth_order_double_sin_cos_K2_U fourth_order_double_sin_cos_K3_U fourth_order_double_sin_cos_K4_U</BindInstances>
+                </Instance>
+            </InstancesList>
+            <BindInstances>CTRL_s_axi_U</BindInstances>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>sin_or_cos_double_Pipeline_1</Name>
+            <Loops>
+                <Loop1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.00</ClockUncertainty>
+                    <EstimatedClockPeriod>4.804</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>5</Best-caseLatency>
+                    <Average-caseLatency>5</Average-caseLatency>
+                    <Worst-caseLatency>5</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>50.000 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>50.000 ns</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>50.000 ns</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>4</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <Loop1>
+                        <Name>Loop 1</Name>
+                        <Slack>8.00</Slack>
+                        <TripCount>4</TripCount>
+                        <Latency>3</Latency>
+                        <AbsoluteTimeLatency>30.000 ns</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>1</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </Loop1>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:400~C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:252</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <Loop1>
+                            <Name>Loop 1</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:400~C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:252</SourceLocation>
+                        </Loop1>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>100</FF>
+                    <AVAIL_FF>41600</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>174</LUT>
+                    <AVAIL_LUT>20800</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>100</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>90</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln400_fu_84_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:400" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln400" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="Loop 1" OPTYPE="seteq" PRAGMA="" RTLNAME="sel_tmp_fu_90_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:400" STORAGESUBTYPE="" URAM="0" VARIABLE="sel_tmp" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="Loop 1" OPTYPE="select" PRAGMA="" RTLNAME="out_bits_5_out" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:400" STORAGESUBTYPE="" URAM="0" VARIABLE="out_bits_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="Loop 1" OPTYPE="seteq" PRAGMA="" RTLNAME="sel_tmp2_fu_105_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:400" STORAGESUBTYPE="" URAM="0" VARIABLE="sel_tmp2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="Loop 1" OPTYPE="select" PRAGMA="" RTLNAME="out_bits_4_out" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:400" STORAGESUBTYPE="" URAM="0" VARIABLE="out_bits_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="Loop 1" OPTYPE="seteq" PRAGMA="" RTLNAME="sel_tmp4_fu_120_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:400" STORAGESUBTYPE="" URAM="0" VARIABLE="sel_tmp4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="Loop 1" OPTYPE="select" PRAGMA="" RTLNAME="out_bits_3_out" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:400" STORAGESUBTYPE="" URAM="0" VARIABLE="out_bits_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="Loop 1" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln400_fu_135_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:400" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln400" VISIBLE="false"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>sin_or_cos_double_Pipeline_2</Name>
+            <Loops>
+                <Loop1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.00</ClockUncertainty>
+                    <EstimatedClockPeriod>7.365</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>5</Best-caseLatency>
+                    <Average-caseLatency>5</Average-caseLatency>
+                    <Worst-caseLatency>5</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>50.000 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>50.000 ns</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>50.000 ns</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>4</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <Loop1>
+                        <Name>Loop 1</Name>
+                        <Slack>8.00</Slack>
+                        <TripCount>3</TripCount>
+                        <Latency>3</Latency>
+                        <AbsoluteTimeLatency>30.000 ns</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>1</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </Loop1>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:401~C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:252</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <Loop1>
+                            <Name>Loop 1</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:401~C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:252</SourceLocation>
+                        </Loop1>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>100</FF>
+                    <AVAIL_FF>41600</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>107</LUT>
+                    <AVAIL_LUT>20800</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>100</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>90</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="Loop 1" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln401_fu_136_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:401" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln401" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln401_fu_142_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:401" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln401" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln403_fu_156_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:403" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln403" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op partselect" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="Loop 1" OPTYPE="partselect" PRAGMA="" RTLNAME="partselect_16ns_63ns_32ns_16_1_1_U4" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:403" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_4" VISIBLE="false"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>sin_or_cos_double_Pipeline_3</Name>
+            <Loops>
+                <Loop1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.00</ClockUncertainty>
+                    <EstimatedClockPeriod>5.405</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>6</Best-caseLatency>
+                    <Average-caseLatency>6</Average-caseLatency>
+                    <Worst-caseLatency>6</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>60.000 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>60.000 ns</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>60.000 ns</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>5</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <Loop1>
+                        <Name>Loop 1</Name>
+                        <Slack>8.00</Slack>
+                        <TripCount>4</TripCount>
+                        <Latency>4</Latency>
+                        <AbsoluteTimeLatency>40.000 ns</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>1</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </Loop1>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:414~C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:252</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <Loop1>
+                            <Name>Loop 1</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:414~C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:252</SourceLocation>
+                        </Loop1>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>133</FF>
+                    <AVAIL_FF>41600</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>113</LUT>
+                    <AVAIL_LUT>20800</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>100</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>90</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="Loop 1" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln414_fu_136_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:414" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln414" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln414_fu_142_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:414" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln414" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sparsemux" DSP="0" ID="" IMPL="compactencoding_dontcare" LATENCY="0" LOOP="Loop 1" OPTYPE="sparsemux" PRAGMA="" RTLNAME="sparsemux_9_2_32_1_1_U13" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:415" STORAGESUBTYPE="" URAM="0" VARIABLE="x" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op ctlz" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="Loop 1" OPTYPE="ctlz" PRAGMA="" RTLNAME="ctlz_32_32_1_1_U14" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_normalize.h:81" STORAGESUBTYPE="" URAM="0" VARIABLE="c_4" VISIBLE="false"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>sin_or_cos_double_Pipeline_4</Name>
+            <Loops>
+                <Loop1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.00</ClockUncertainty>
+                    <EstimatedClockPeriod>6.945</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>3</Best-caseLatency>
+                    <Average-caseLatency>4</Average-caseLatency>
+                    <Worst-caseLatency>6</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>30.000 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>40.000 ns</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>60.000 ns</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>1 ~ 4</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <Loop1>
+                        <Name>Loop 1</Name>
+                        <Slack>8.00</Slack>
+                        <TripCount>
+                            <range>
+                                <min>0</min>
+                                <max>4</max>
+                            </range>
+                        </TripCount>
+                        <Latency>1 ~ 4</Latency>
+                        <AbsoluteTimeLatency>10.000 ns ~ 40.000 ns</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </Loop1>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:419~C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:252</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <Loop1>
+                            <Name>Loop 1</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:423~C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:252</SourceLocation>
+                        </Loop1>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>168</FF>
+                    <AVAIL_FF>41600</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>656</LUT>
+                    <AVAIL_LUT>20800</AVAIL_LUT>
+                    <UTIL_LUT>3</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>100</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>90</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sparsemux" DSP="0" ID="" IMPL="compactencoding_dontcare" LATENCY="0" LOOP="Loop 1" OPTYPE="sparsemux" PRAGMA="" RTLNAME="sparsemux_9_2_32_1_1_U25" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:422" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_6" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="shift_3_fu_165_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:422" STORAGESUBTYPE="" URAM="0" VARIABLE="shift_3" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln423_fu_179_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:423" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln423" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="Loop 1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln423_fu_185_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:423" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln423" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op ashr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="Loop 1" OPTYPE="ashr" PRAGMA="" RTLNAME="ashr_ln423_fu_239_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:423" STORAGESUBTYPE="" URAM="0" VARIABLE="ashr_ln423" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="Loop 1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln423_fu_245_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:423" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln423" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="Loop 1" OPTYPE="select" PRAGMA="" RTLNAME="in_shift_fu_251_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:423" STORAGESUBTYPE="" URAM="0" VARIABLE="in_shift" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="Loop 1" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln424_fu_193_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:424" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln424" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln421_fu_199_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:421" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln421" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="Loop 1" OPTYPE="or" PRAGMA="" RTLNAME="or_ln424_fu_217_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:424" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln424" VISIBLE="false"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>sin_or_cos_double_s</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.00</ClockUncertainty>
+                    <EstimatedClockPeriod>7.945</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>49</Best-caseLatency>
+                    <Average-caseLatency>50</Average-caseLatency>
+                    <Worst-caseLatency>52</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.490 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.520 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>49 ~ 52</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:459~C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:223</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>8</BRAM_18K>
+                    <AVAIL_BRAM>100</AVAIL_BRAM>
+                    <UTIL_BRAM>8</UTIL_BRAM>
+                    <DSP>85</DSP>
+                    <AVAIL_DSP>90</AVAIL_DSP>
+                    <UTIL_DSP>94</UTIL_DSP>
+                    <FF>4632</FF>
+                    <AVAIL_FF>41600</AVAIL_FF>
+                    <UTIL_FF>11</UTIL_FF>
+                    <LUT>6330</LUT>
+                    <AVAIL_LUT>20800</AVAIL_LUT>
+                    <UTIL_LUT>30</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="setlt" PRAGMA="" RTLNAME="closepath_fu_459_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:451" STORAGESUBTYPE="" URAM="0" VARIABLE="closepath" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln454_fu_825_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:454" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln454" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="Ex_fu_830_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:453" STORAGESUBTYPE="" URAM="0" VARIABLE="Ex" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln396_fu_465_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:396" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln396" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="addr_fu_471_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:396" STORAGESUBTYPE="" URAM="0" VARIABLE="addr" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln398_fu_501_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:398" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln398" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="27" ID="" IMPL="auto" LATENCY="4" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_170s_53ns_170_5_1_U40" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:468" STORAGESUBTYPE="" URAM="0" VARIABLE="h" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="k_fu_552_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:451" STORAGESUBTYPE="" URAM="0" VARIABLE="k" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="Mx_bits_1_fu_562_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:492" STORAGESUBTYPE="" URAM="0" VARIABLE="Mx_bits_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="Mx_bits_3_fu_567_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:491" STORAGESUBTYPE="" URAM="0" VARIABLE="Mx_bits_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op ctlz" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="ctlz" PRAGMA="" RTLNAME="ctlz_62_62_1_1_U44" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_normalize.h:75" STORAGESUBTYPE="" URAM="0" VARIABLE="Mx_zeros" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln504_fu_860_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:504" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln504" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="Ex_1_fu_875_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:505" STORAGESUBTYPE="" URAM="0" VARIABLE="Ex_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln506_fu_889_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:506" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln506" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="select_ln506_fu_895_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:506" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln506" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln506_fu_904_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:506" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln506" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln506_fu_909_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:506" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln506" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="x_1_fu_914_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:506" STORAGESUBTYPE="" URAM="0" VARIABLE="x_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sparsemux" DSP="0" ID="" IMPL="compactencoding_dontcare" LATENCY="0" LOOP="" OPTYPE="sparsemux" PRAGMA="" RTLNAME="sparsemux_17_3_1_1_1_U41" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:242" STORAGESUBTYPE="" URAM="0" VARIABLE="sin_basis" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="2" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_49ns_49ns_98_3_1_U36" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\common\hls_hotbm_double.cpp:25" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln25" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="2" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_49ns_49ns_98_3_1_U36" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\common\hls_hotbm_double.cpp:26" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln26" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="2" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_49ns_49ns_98_3_1_U37" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\common\hls_hotbm_double.cpp:27" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln27" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="2" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_56ns_52s_108_3_1_U38" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\common\hls_hotbm_double.cpp:33" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln33" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="2" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_49ns_44s_93_3_1_U35" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\common\hls_hotbm_double.cpp:34" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln34" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="4" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_42ns_33ns_75_2_1_U34" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\common\hls_hotbm_double.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln35" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_35ns_25ns_60_2_1_U33" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\common\hls_hotbm_double.cpp:36" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln36" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="Mx_2_fu_1118_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:243" STORAGESUBTYPE="" URAM="0" VARIABLE="Mx_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="16" ID="" IMPL="auto" LATENCY="4" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64s_63ns_126_5_1_U39" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\common\hls_hotbm_double.cpp:37" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln37" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="Ex_3_fu_1202_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:243" STORAGESUBTYPE="" URAM="0" VARIABLE="Ex_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln432_fu_1218_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:432" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln432" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="newexp_fu_1228_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:432" STORAGESUBTYPE="" URAM="0" VARIABLE="newexp" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln433_fu_1197_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:433" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln433" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="or" PRAGMA="" RTLNAME="or_ln433_fu_1242_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:433" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln433" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sparsemux" DSP="0" ID="" IMPL="compactencoding_dontcare" LATENCY="0" LOOP="" OPTYPE="sparsemux" PRAGMA="" RTLNAME="sparsemux_33_4_1_1_1_U42" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:267" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_9" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sparsemux" DSP="0" ID="" IMPL="compactencoding_dontcare" LATENCY="0" LOOP="" OPTYPE="sparsemux" PRAGMA="" RTLNAME="sparsemux_33_4_1_1_1_U43" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:267" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_s" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="results_sign_fu_773_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:242" STORAGESUBTYPE="" URAM="0" VARIABLE="results_sign" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln271_fu_781_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:271" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln271" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln271_1_fu_527_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:271" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln271_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="and" PRAGMA="" RTLNAME="and_ln271_fu_786_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:271" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln271" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln282_fu_791_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:282" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln282" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln282_fu_796_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:282" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln282" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="and" PRAGMA="" RTLNAME="results_sign_1_fu_802_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:282" STORAGESUBTYPE="" URAM="0" VARIABLE="results_sign_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="select_ln282_fu_1261_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:282" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln282" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="or" PRAGMA="" RTLNAME="or_ln282_fu_1268_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:282" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln282" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="results_exp_fu_1273_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:282" STORAGESUBTYPE="" URAM="0" VARIABLE="results_exp" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="select_ln282_2_fu_1281_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:282" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln282_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="results_sig_fu_1288_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:282" STORAGESUBTYPE="" URAM="0" VARIABLE="results_sig" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="and" PRAGMA="" RTLNAME="not_and_ln271_demorgan_fu_808_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:271" STORAGESUBTYPE="" URAM="0" VARIABLE="not_and_ln271_demorgan" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="xor" PRAGMA="" RTLNAME="not_and_ln271_fu_813_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:271" STORAGESUBTYPE="" URAM="0" VARIABLE="not_and_ln271" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="and" PRAGMA="" RTLNAME="results_sign_2_fu_819_p2" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:282" STORAGESUBTYPE="" URAM="0" VARIABLE="results_sign_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="results_exp_1_fu_1296_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:271" STORAGESUBTYPE="" URAM="0" VARIABLE="results_exp_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="results_sig_1_fu_1303_p3" SOURCE="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:271" STORAGESUBTYPE="" URAM="0" VARIABLE="results_sig_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="ref_4oPi_table_256_U" SOURCE="" STORAGESIZE="256 10 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="ref_4oPi_table_256" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="lutram" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="pragma" RTLNAME="fourth_order_double_sin_cos_K0_U" SOURCE="" STORAGESIZE="59 256 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="fourth_order_double_sin_cos_K0" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="lutram" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="pragma" RTLNAME="fourth_order_double_sin_cos_K1_U" SOURCE="" STORAGESIZE="52 256 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="fourth_order_double_sin_cos_K1" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="lutram" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="pragma" RTLNAME="fourth_order_double_sin_cos_K2_U" SOURCE="" STORAGESIZE="44 256 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="fourth_order_double_sin_cos_K2" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="lutram" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="pragma" RTLNAME="fourth_order_double_sin_cos_K3_U" SOURCE="" STORAGESIZE="33 256 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="fourth_order_double_sin_cos_K3" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="lutram" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="pragma" RTLNAME="fourth_order_double_sin_cos_K4_U" SOURCE="" STORAGESIZE="25 256 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="fourth_order_double_sin_cos_K4" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>trig_approx</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.00</ClockUncertainty>
+                    <EstimatedClockPeriod>7.945</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>51</Best-caseLatency>
+                    <Average-caseLatency>52</Average-caseLatency>
+                    <Worst-caseLatency>54</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.510 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.520 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.540 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>52 ~ 55</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>D:/TrignoApproxHSL/trig_src_inbuilt_cos.cpp:8</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>8</BRAM_18K>
+                    <AVAIL_BRAM>100</AVAIL_BRAM>
+                    <UTIL_BRAM>8</UTIL_BRAM>
+                    <DSP>85</DSP>
+                    <AVAIL_DSP>90</AVAIL_DSP>
+                    <UTIL_DSP>94</UTIL_DSP>
+                    <FF>4940</FF>
+                    <AVAIL_FF>41600</AVAIL_FF>
+                    <UTIL_FF>11</UTIL_FF>
+                    <LUT>6643</LUT>
+                    <AVAIL_LUT>20800</AVAIL_LUT>
+                    <UTIL_LUT>31</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="CTRL" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="CTRL_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+            </BindNodes>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <UserConfigCommands/>
+    <Args>
+        <Arg ArgName="angle" index="0" direction="in" srcType="double" srcSize="64">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_CTRL" name="angle_1" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_CTRL" name="angle_2" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="cos_out" index="1" direction="out" srcType="double*" srcSize="64">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_CTRL" name="cos_out_1" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_CTRL" name="cos_out_2" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_CTRL" name="cos_out_ctrl" usage="control" direction="out"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <Interfaces>
+        <Interface InterfaceName="s_axi_CTRL" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="6" portPrefix="s_axi_CTRL_" paramPrefix="C_S_AXI_CTRL_">
+            <ports>
+                <port>s_axi_CTRL_ARADDR</port>
+                <port>s_axi_CTRL_ARREADY</port>
+                <port>s_axi_CTRL_ARVALID</port>
+                <port>s_axi_CTRL_AWADDR</port>
+                <port>s_axi_CTRL_AWREADY</port>
+                <port>s_axi_CTRL_AWVALID</port>
+                <port>s_axi_CTRL_BREADY</port>
+                <port>s_axi_CTRL_BRESP</port>
+                <port>s_axi_CTRL_BVALID</port>
+                <port>s_axi_CTRL_RDATA</port>
+                <port>s_axi_CTRL_RREADY</port>
+                <port>s_axi_CTRL_RRESP</port>
+                <port>s_axi_CTRL_RVALID</port>
+                <port>s_axi_CTRL_WDATA</port>
+                <port>s_axi_CTRL_WREADY</port>
+                <port>s_axi_CTRL_WSTRB</port>
+                <port>s_axi_CTRL_WVALID</port>
+            </ports>
+            <registers>
+                <register offset="0x00" name="CTRL" access="RW" description="Control signals" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="AP_START" access="RW" description="Control signal Register for 'ap_start'."/>
+                        <field offset="1" width="1" name="AP_DONE" access="R" description="Control signal Register for 'ap_done'."/>
+                        <field offset="2" width="1" name="AP_IDLE" access="R" description="Control signal Register for 'ap_idle'."/>
+                        <field offset="3" width="1" name="AP_READY" access="R" description="Control signal Register for 'ap_ready'."/>
+                        <field offset="4" width="3" name="RESERVED_1" access="R" description="Reserved.  0s on read."/>
+                        <field offset="7" width="1" name="AUTO_RESTART" access="RW" description="Control signal Register for 'auto_restart'."/>
+                        <field offset="8" width="1" name="RESERVED_2" access="R" description="Reserved.  0s on read."/>
+                        <field offset="9" width="1" name="INTERRUPT" access="R" description="Control signal Register for 'interrupt'."/>
+                        <field offset="10" width="22" name="RESERVED_3" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x04" name="GIER" access="RW" description="Global Interrupt Enable Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="Enable" access="RW" description="Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"/>
+                        <field offset="1" width="31" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x08" name="IP_IER" access="RW" description="IP Interrupt Enable Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="CHAN0_INT_EN" access="RW" description="Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."/>
+                        <field offset="1" width="1" name="CHAN1_INT_EN" access="RW" description="Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."/>
+                        <field offset="2" width="30" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x0c" name="IP_ISR" access="RW" description="IP Interrupt Status Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="CHAN0_INT_ST" access="RTOW" description="Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt."/>
+                        <field offset="1" width="1" name="CHAN1_INT_ST" access="RTOW" description="Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt."/>
+                        <field offset="2" width="30" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x10" name="angle_1" access="W" description="Data signal of angle" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="angle" access="W" description="Bit 31 to 0 of angle"/>
+                    </fields>
+                </register>
+                <register offset="0x14" name="angle_2" access="W" description="Data signal of angle" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="angle" access="W" description="Bit 63 to 32 of angle"/>
+                    </fields>
+                </register>
+                <register offset="0x1c" name="cos_out_1" access="R" description="Data signal of cos_out" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="cos_out" access="R" description="Bit 31 to 0 of cos_out"/>
+                    </fields>
+                </register>
+                <register offset="0x20" name="cos_out_2" access="R" description="Data signal of cos_out" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="cos_out" access="R" description="Bit 63 to 32 of cos_out"/>
+                    </fields>
+                </register>
+                <register offset="0x24" name="cos_out_ctrl" access="R" description="Control signal of cos_out" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="cos_out_ap_vld" access="R" description="Control signal cos_out_ap_vld"/>
+                        <field offset="1" width="31" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+            </registers>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="angle"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="28" argName="cos_out"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <busParams>
+                <busParam busParamName="ASSOCIATED_BUSIF">s_axi_CTRL</busParam>
+                <busParam busParamName="ASSOCIATED_RESET">ap_rst_n</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_rst_n" type="reset" busTypeName="reset" mode="slave">
+            <busParams>
+                <busParam busParamName="POLARITY">ACTIVE_LOW</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_rst_n">RST</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_rst_n</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="interrupt" type="interrupt" busTypeName="interrupt" mode="master" dataWidth="1">
+            <busParams>
+                <busParam busParamName="SENSITIVITY">LEVEL_HIGH</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="interrupt">INTERRUPT</portMap>
+            </portMaps>
+            <ports>
+                <port>interrupt</port>
+            </ports>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="S_AXILITE Interfaces">
+                <table>
+                    <keys size="5">Interface, Data Width, Address Width, Offset, Register</keys>
+                    <column name="s_axi_CTRL">32, 6, 16, 0</column>
+                </table>
+            </item>
+            <item name="S_AXILITE Registers">
+                <table>
+                    <keys size="7">Interface, Register, Offset, Width, Access, Description, Bit Fields</keys>
+                    <column name="s_axi_CTRL">CTRL, 0x00, 32, RW, Control signals, 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT</column>
+                    <column name="s_axi_CTRL">GIER, 0x04, 32, RW, Global Interrupt Enable Register, 0=Enable</column>
+                    <column name="s_axi_CTRL">IP_IER, 0x08, 32, RW, IP Interrupt Enable Register, 0=CHAN0_INT_EN 1=CHAN1_INT_EN</column>
+                    <column name="s_axi_CTRL">IP_ISR, 0x0c, 32, RW, IP Interrupt Status Register, 0=CHAN0_INT_ST 1=CHAN1_INT_ST</column>
+                    <column name="s_axi_CTRL">angle_1, 0x10, 32, W, Data signal of angle, </column>
+                    <column name="s_axi_CTRL">angle_2, 0x14, 32, W, Data signal of angle, </column>
+                    <column name="s_axi_CTRL">cos_out_1, 0x1c, 32, R, Data signal of cos_out, </column>
+                    <column name="s_axi_CTRL">cos_out_2, 0x20, 32, R, Data signal of cos_out, </column>
+                    <column name="s_axi_CTRL">cos_out_ctrl, 0x24, 32, R, Control signal of cos_out, 0=cos_out_ap_vld</column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table>
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk</column>
+                    <column name="ap_rst_n">reset, ap_rst_n</column>
+                    <column name="interrupt">interrupt, interrupt</column>
+                    <column name="ap_ctrl">ap_ctrl_hs, </column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table>
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="angle">in, double</column>
+                    <column name="cos_out">out, double*</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table>
+                    <keys size="4">Argument, HW Interface, HW Type, HW Info</keys>
+                    <column name="angle">s_axi_CTRL, register, name=angle_1 offset=0x10 range=32</column>
+                    <column name="angle">s_axi_CTRL, register, name=angle_2 offset=0x14 range=32</column>
+                    <column name="cos_out">s_axi_CTRL, register, name=cos_out_1 offset=0x1c range=32</column>
+                    <column name="cos_out">s_axi_CTRL, register, name=cos_out_2 offset=0x20 range=32</column>
+                    <column name="cos_out">s_axi_CTRL, register, name=cos_out_ctrl offset=0x24 range=32</column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+    <ResolutionUrl key="ZZZ">docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=ZZZ.html</ResolutionUrl>
+    <ReportBurst>
+        <section name="M_AXI Burst Information" level="0" HEADER_NOTE="Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings."/>
+    </ReportBurst>
+    <PragmaReport>
+        <Pragma type="interface" location="../../TrignoApproxHSL/trig_src_inbuilt_cos.cpp:11" status="valid" parentFunction="trig_approx" variable="angle" isDirective="0" options="s_axilite port=angle bundle=CTRL"/>
+        <Pragma type="interface" location="../../TrignoApproxHSL/trig_src_inbuilt_cos.cpp:12" status="valid" parentFunction="trig_approx" variable="cos_out" isDirective="0" options="s_axilite port=cos_out bundle=CTRL"/>
+        <Pragma type="interface" location="../../TrignoApproxHSL/trig_src_inbuilt_cos.cpp:13" status="valid" parentFunction="trig_approx" variable="return" isDirective="0" options="s_axilite port=return bundle=CTRL"/>
+    </PragmaReport>
+</profile>
+

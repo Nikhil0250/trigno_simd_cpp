@@ -1,0 +1,175 @@
+
+
+================================================================
+== Synthesis Summary Report of 'trig_approx'
+================================================================
++ General Information: 
+    * Date:           Tue Feb 11 01:13:29 2025
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        trig_approx
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: artix7
+    * Target device:  xc7a35t-cpg236-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------+--------+-------+---------+-----------+----------+---------+------+----------+--------+----------+-----------+------------+-----+
+    |    Modules    |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |        |          |           |            |     |
+    |    & Loops    |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM  |    DSP   |     FF    |     LUT    | URAM|
+    +---------------+--------+-------+---------+-----------+----------+---------+------+----------+--------+----------+-----------+------------+-----+
+    |+ trig_approx  |  Timing|  -0.48|      198|  1.980e+03|         -|      199|     -|        no|  2 (2%)|  14 (15%)|  2210 (5%)|  3349 (16%)|    -|
+    +---------------+--------+-------+---------+-----------+----------+---------+------+----------+--------+----------+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++------------+------------+---------------+--------+----------+
+| Interface  | Data Width | Address Width | Offset | Register |
++------------+------------+---------------+--------+----------+
+| s_axi_CTRL | 32         | 6             | 16     | 0        |
++------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface  | Register   | Offset | Width | Access | Description                      | Bit Fields                                                           |
++------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CTRL | CTRL       | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CTRL | GIER       | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CTRL | IP_IER     | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CTRL | IP_ISR     | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_CTRL | in_r_1     | 0x10   | 32    | W      | Data signal of in_r              |                                                                      |
+| s_axi_CTRL | in_r_2     | 0x14   | 32    | W      | Data signal of in_r              |                                                                      |
+| s_axi_CTRL | out_r_1    | 0x1c   | 32    | R      | Data signal of out_r             |                                                                      |
+| s_axi_CTRL | out_r_2    | 0x20   | 32    | R      | Data signal of out_r             |                                                                      |
+| s_axi_CTRL | out_r_ctrl | 0x24   | 32    | R      | Control signal of out_r          | 0=out_r_ap_vld                                                       |
++------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| in       | in        | double   |
+| out      | out       | double*  |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+----------+--------------------------------------+
+| Argument | HW Interface | HW Type  | HW Info                              |
++----------+--------------+----------+--------------------------------------+
+| in       | s_axi_CTRL   | register | name=in_r_1 offset=0x10 range=32     |
+| in       | s_axi_CTRL   | register | name=in_r_2 offset=0x14 range=32     |
+| out      | s_axi_CTRL   | register | name=out_r_1 offset=0x1c range=32    |
+| out      | s_axi_CTRL   | register | name=out_r_2 offset=0x20 range=32    |
+| out      | s_axi_CTRL   | register | name=out_r_ctrl offset=0x24 range=32 |
++----------+--------------+----------+--------------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------+-----+--------+-------------+-----------+------------------------+---------+
+| Name                                    | DSP | Pragma | Variable    | Op        | Impl                   | Latency |
++-----------------------------------------+-----+--------+-------------+-----------+------------------------+---------+
+| + trig_approx                           | 14  |        |             |           |                        |         |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U3      |     |        | dc          | ddiv      | fabric                 | 58      |
+|   icmp_ln18_fu_237_p2                   |     |        | icmp_ln18   | setlt     | auto                   | 0       |
+|   icmp_ln24_fu_242_p2                   |     |        | icmp_ln24   | setgt     | auto                   | 0       |
+|   data_1_fu_268_p2                      |     |        | data_1      | add       | fabric                 | 0       |
+|   xs_sign_2_fu_294_p2                   |     |        | xs_sign_2   | and       | auto                   | 0       |
+|   xs_exp_2_fu_299_p3                    |     |        | xs_exp_2    | select    | auto_sel               | 0       |
+|   xs_sig_2_fu_305_p3                    |     |        | xs_sig_2    | select    | auto_sel               | 0       |
+|   xor_ln39_fu_311_p2                    |     |        | xor_ln39    | xor       | auto                   | 0       |
+|   xs_sig_3_fu_316_p2                    |     |        | xs_sig_3    | and       | auto                   | 0       |
+|   xor_ln18_fu_336_p2                    |     |        | xor_ln18    | xor       | auto                   | 0       |
+|   and_ln24_fu_342_p2                    |     |        | and_ln24    | and       | auto                   | 0       |
+|   or_ln24_fu_348_p2                     |     |        | or_ln24     | or        | auto                   | 0       |
+|   xor_ln24_fu_354_p2                    |     |        | xor_ln24    | xor       | auto                   | 0       |
+|   icmp_ln19_fu_360_p2                   |     |        | icmp_ln19   | setne     | auto                   | 0       |
+|   icmp_ln19_1_fu_365_p2                 |     |        | icmp_ln19_1 | setne     | auto                   | 0       |
+|   or_ln19_fu_370_p2                     |     |        | or_ln19     | or        | auto                   | 0       |
+|   and_ln19_fu_376_p2                    |     |        | and_ln19    | and       | auto                   | 0       |
+|   and_ln19_1_fu_381_p2                  |     |        | and_ln19_1  | and       | auto                   | 0       |
+|   sparsemux_9_3_64_1_1_U6               |     |        | quotient    | sparsemux | onehotencoding_realdef | 0       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U2      | 11  |        | mul_i       | dmul      | maxdsp                 | 5       |
+|   dadddsub_64ns_64ns_64_7_full_dsp_1_U1 | 3   |        | ang_mod     | dsub      | fulldsp                | 6       |
+|   icmp_ln19_2_fu_439_p2                 |     |        | icmp_ln19_2 | setne     | auto                   | 0       |
+|   icmp_ln19_3_fu_445_p2                 |     |        | icmp_ln19_3 | seteq     | auto                   | 0       |
+|   or_ln19_1_fu_451_p2                   |     |        | or_ln19_1   | or        | auto                   | 0       |
+|   dcmp_64ns_64ns_1_2_no_dsp_1_U4        |     |        | tmp_1       | dcmp      | auto                   | 1       |
+|   and_ln19_2_fu_528_p2                  |     |        | and_ln19_2  | and       | auto                   | 0       |
+|   sign_fu_532_p3                        |     |        | sign        | select    | auto_sel               | 0       |
+|   dcmp_64ns_64ns_1_2_no_dsp_1_U5        |     |        | tmp_4       | dcmp      | auto                   | 1       |
+|   and_ln21_fu_470_p2                    |     |        | and_ln21    | and       | auto                   | 0       |
+|   xor_ln22_fu_552_p2                    |     |        | xor_ln22    | xor       | auto                   | 0       |
+|   dadddsub_64ns_64ns_64_7_full_dsp_1_U1 | 3   |        | x_1         | dsub      | fulldsp                | 6       |
+|   sign_3_fu_574_p3                      |     |        | sign_3      | select    | auto_sel               | 0       |
+|   x_2_fu_475_p3                         |     |        | x_2         | select    | auto_sel               | 0       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U2      | 11  |        | mul4_i      | dmul      | maxdsp                 | 5       |
+|   icmp_ln25_fu_499_p2                   |     |        | icmp_ln25   | setne     | auto                   | 0       |
+|   icmp_ln25_1_fu_505_p2                 |     |        | icmp_ln25_1 | seteq     | auto                   | 0       |
+|   or_ln25_fu_511_p2                     |     |        | or_ln25     | or        | auto                   | 0       |
+|   dcmp_64ns_64ns_1_2_no_dsp_1_U4        |     |        | tmp_6       | dcmp      | auto                   | 1       |
+|   and_ln25_fu_515_p2                    |     |        | and_ln25    | and       | auto                   | 0       |
+|   dadddsub_64ns_64ns_64_7_full_dsp_1_U1 | 3   |        | x_3         | dsub      | fulldsp                | 6       |
+|   x_5_fu_521_p3                         |     |        | x_5         | select    | auto_sel               | 0       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U2      | 11  |        | x2          | dmul      | maxdsp                 | 5       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U2      | 11  |        | x3          | dmul      | maxdsp                 | 5       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U2      | 11  |        | x5          | dmul      | maxdsp                 | 5       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U2      | 11  |        | x7          | dmul      | maxdsp                 | 5       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U2      | 11  |        | x9          | dmul      | maxdsp                 | 5       |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U3      |     |        | div_i3      | ddiv      | fabric                 | 58      |
+|   dadddsub_64ns_64ns_64_7_full_dsp_1_U1 | 3   |        | sub_i4      | dsub      | fulldsp                | 6       |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U3      |     |        | div5_i      | ddiv      | fabric                 | 58      |
+|   dadddsub_64ns_64ns_64_7_full_dsp_1_U1 | 3   |        | add_i       | dsub      | fulldsp                | 6       |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U3      |     |        | div6_i      | ddiv      | fabric                 | 58      |
+|   dadddsub_64ns_64ns_64_7_full_dsp_1_U1 | 3   |        | sub7_i5     | dsub      | fulldsp                | 6       |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U3      |     |        | div8_i      | ddiv      | fabric                 | 58      |
+|   dadddsub_64ns_64ns_64_7_full_dsp_1_U1 | 3   |        | add9_i      | dsub      | fulldsp                | 6       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U2      | 11  |        | result      | dmul      | maxdsp                 | 5       |
++-----------------------------------------+-----+--------+-------------+-----------+------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++----------------+-----------+-----------+------+------+--------+------------+------+---------+------------------+
+| Name           | Usage     | Type      | BRAM | URAM | Pragma | Variable   | Impl | Latency | Bitwidth, Depth, |
+|                |           |           |      |      |        |            |      |         | Banks            |
++----------------+-----------+-----------+------+------+--------+------------+------+---------+------------------+
+| + trig_approx  |           |           | 2    | 0    |        |            |      |         |                  |
+|   CTRL_s_axi_U | interface | s_axilite |      |      |        |            |      |         |                  |
+|   mask_table_U | rom_1p    |           | 2    |      |        | mask_table | auto | 1       | 52, 64, 1        |
++----------------+-----------+-----------+------+------+--------+------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+-----------------------------------+------------------------------------------------------------------------------+
+| Type      | Options                           | Location                                                                     |
++-----------+-----------------------------------+------------------------------------------------------------------------------+
+| interface | s_axilite port=in bundle=CTRL     | ../../SIMD_Vitis_HLS_Functions/taylor_sin_SIMD.cpp:46 in trig_approx, in     |
+| interface | s_axilite port=out bundle=CTRL    | ../../SIMD_Vitis_HLS_Functions/taylor_sin_SIMD.cpp:47 in trig_approx, out    |
+| interface | s_axilite port=return bundle=CTRL | ../../SIMD_Vitis_HLS_Functions/taylor_sin_SIMD.cpp:48 in trig_approx, return |
++-----------+-----------------------------------+------------------------------------------------------------------------------+
+
+

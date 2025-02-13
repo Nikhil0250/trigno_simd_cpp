@@ -1,0 +1,224 @@
+
+
+================================================================
+== Synthesis Summary Report of 'trig_approx'
+================================================================
++ General Information: 
+    * Date:           Sun Feb  9 02:52:16 2025
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        trig_approx
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: artix7
+    * Target device:  xc7a35t-cpg236-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------+------+------+---------+---------+----------+---------+------+----------+--------+----------+------------+------------+-----+
+    |              Modules             | Issue|      | Latency | Latency | Iteration|         | Trip |          |        |          |            |            |     |
+    |              & Loops             | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined|  BRAM  |    DSP   |     FF     |     LUT    | URAM|
+    +----------------------------------+------+------+---------+---------+----------+---------+------+----------+--------+----------+------------+------------+-----+
+    |+ trig_approx                     |     -|  0.05|       54|  540.000|         -|       55|     -|        no|  8 (8%)|  85 (94%)|  4940 (11%)|  6643 (31%)|    -|
+    | + sin_or_cos_double_s            |     -|  0.05|       52|  520.000|         -|       52|     -|        no|  8 (8%)|  85 (94%)|  4632 (11%)|  6330 (30%)|    -|
+    |  + sin_or_cos_double_Pipeline_1  |     -|  3.20|        5|   50.000|         -|        5|     -|        no|       -|         -|   100 (~0%)|   174 (~0%)|    -|
+    |   o Loop 1                       |     -|  8.00|        3|   30.000|         1|        1|     4|       yes|       -|         -|           -|           -|    -|
+    |  + sin_or_cos_double_Pipeline_2  |     -|  0.63|        5|   50.000|         -|        5|     -|        no|       -|         -|   100 (~0%)|   107 (~0%)|    -|
+    |   o Loop 1                       |     -|  8.00|        3|   30.000|         1|        1|     3|       yes|       -|         -|           -|           -|    -|
+    |  + sin_or_cos_double_Pipeline_3  |     -|  2.59|        6|   60.000|         -|        6|     -|        no|       -|         -|   133 (~0%)|   113 (~0%)|    -|
+    |   o Loop 1                       |     -|  8.00|        4|   40.000|         1|        1|     4|       yes|       -|         -|           -|           -|    -|
+    |  + sin_or_cos_double_Pipeline_4  |     -|  1.05|        6|   60.000|         -|        6|     -|        no|       -|         -|   168 (~0%)|    656 (3%)|    -|
+    |   o Loop 1                       |     -|  8.00|        4|   40.000|         2|        1|     4|       yes|       -|         -|           -|           -|    -|
+    +----------------------------------+------+------+---------+---------+----------+---------+------+----------+--------+----------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++------------+------------+---------------+--------+----------+
+| Interface  | Data Width | Address Width | Offset | Register |
++------------+------------+---------------+--------+----------+
+| s_axi_CTRL | 32         | 6             | 16     | 0        |
++------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++------------+--------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface  | Register     | Offset | Width | Access | Description                      | Bit Fields                                                           |
++------------+--------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CTRL | CTRL         | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CTRL | GIER         | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CTRL | IP_IER       | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CTRL | IP_ISR       | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_CTRL | angle_1      | 0x10   | 32    | W      | Data signal of angle             |                                                                      |
+| s_axi_CTRL | angle_2      | 0x14   | 32    | W      | Data signal of angle             |                                                                      |
+| s_axi_CTRL | cos_out_1    | 0x1c   | 32    | R      | Data signal of cos_out           |                                                                      |
+| s_axi_CTRL | cos_out_2    | 0x20   | 32    | R      | Data signal of cos_out           |                                                                      |
+| s_axi_CTRL | cos_out_ctrl | 0x24   | 32    | R      | Control signal of cos_out        | 0=cos_out_ap_vld                                                     |
++------------+--------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| angle    | in        | double   |
+| cos_out  | out       | double*  |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+----------+----------------------------------------+
+| Argument | HW Interface | HW Type  | HW Info                                |
++----------+--------------+----------+----------------------------------------+
+| angle    | s_axi_CTRL   | register | name=angle_1 offset=0x10 range=32      |
+| angle    | s_axi_CTRL   | register | name=angle_2 offset=0x14 range=32      |
+| cos_out  | s_axi_CTRL   | register | name=cos_out_1 offset=0x1c range=32    |
+| cos_out  | s_axi_CTRL   | register | name=cos_out_2 offset=0x20 range=32    |
+| cos_out  | s_axi_CTRL   | register | name=cos_out_ctrl offset=0x24 range=32 |
++----------+--------------+----------+----------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------+-----+--------+------------------------+------------+--------------------------+---------+
+| Name                                    | DSP | Pragma | Variable               | Op         | Impl                     | Latency |
++-----------------------------------------+-----+--------+------------------------+------------+--------------------------+---------+
+| + trig_approx                           | 85  |        |                        |            |                          |         |
+|  + sin_or_cos_double_s                  | 85  |        |                        |            |                          |         |
+|    closepath_fu_459_p2                  |     |        | closepath              | setlt      | auto                     | 0       |
+|    add_ln454_fu_825_p2                  |     |        | add_ln454              | add        | fabric                   | 0       |
+|    Ex_fu_830_p3                         |     |        | Ex                     | select     | auto_sel                 | 0       |
+|    add_ln396_fu_465_p2                  |     |        | add_ln396              | add        | fabric                   | 0       |
+|    addr_fu_471_p3                       |     |        | addr                   | select     | auto_sel                 | 0       |
+|    shl_ln398_fu_501_p2                  |     |        | shl_ln398              | shl        | auto_pipe                | 0       |
+|    mul_170s_53ns_170_5_1_U40            | 27  |        | h                      | mul        | auto                     | 4       |
+|    k_fu_552_p3                          |     |        | k                      | select     | auto_sel                 | 0       |
+|    Mx_bits_1_fu_562_p2                  |     |        | Mx_bits_1              | sub        | fabric                   | 0       |
+|    Mx_bits_3_fu_567_p3                  |     |        | Mx_bits_3              | select     | auto_sel                 | 0       |
+|    ctlz_62_62_1_1_U44                   |     |        | Mx_zeros               | ctlz       | auto                     | 0       |
+|    shl_ln504_fu_860_p2                  |     |        | shl_ln504              | shl        | auto_pipe                | 0       |
+|    Ex_1_fu_875_p2                       |     |        | Ex_1                   | sub        | fabric                   | 0       |
+|    sub_ln506_fu_889_p2                  |     |        | sub_ln506              | sub        | fabric                   | 0       |
+|    select_ln506_fu_895_p3               |     |        | select_ln506           | select     | auto_sel                 | 0       |
+|    lshr_ln506_fu_904_p2                 |     |        | lshr_ln506             | lshr       | auto_pipe                | 0       |
+|    shl_ln506_fu_909_p2                  |     |        | shl_ln506              | shl        | auto_pipe                | 0       |
+|    x_1_fu_914_p3                        |     |        | x_1                    | select     | auto_sel                 | 0       |
+|    sparsemux_17_3_1_1_1_U41             |     |        | sin_basis              | sparsemux  | compactencoding_dontcare | 0       |
+|    mul_49ns_49ns_98_3_1_U36             | 9   |        | mul_ln25               | mul        | auto                     | 2       |
+|    mul_49ns_49ns_98_3_1_U36             | 9   |        | mul_ln26               | mul        | auto                     | 2       |
+|    mul_49ns_49ns_98_3_1_U37             | 9   |        | mul_ln27               | mul        | auto                     | 2       |
+|    mul_56ns_52s_108_3_1_U38             | 9   |        | mul_ln33               | mul        | auto                     | 2       |
+|    mul_49ns_44s_93_3_1_U35              | 9   |        | mul_ln34               | mul        | auto                     | 2       |
+|    mul_42ns_33ns_75_2_1_U34             | 4   |        | mul_ln35               | mul        | auto                     | 1       |
+|    mul_35ns_25ns_60_2_1_U33             | 2   |        | mul_ln36               | mul        | auto                     | 1       |
+|    Mx_2_fu_1118_p3                      |     |        | Mx_2                   | select     | auto_sel                 | 0       |
+|    mul_64s_63ns_126_5_1_U39             | 16  |        | mul_ln37               | mul        | auto                     | 4       |
+|    Ex_3_fu_1202_p3                      |     |        | Ex_3                   | select     | auto_sel                 | 0       |
+|    add_ln432_fu_1218_p2                 |     |        | add_ln432              | add        | fabric                   | 0       |
+|    newexp_fu_1228_p2                    |     |        | newexp                 | sub        | fabric                   | 0       |
+|    icmp_ln433_fu_1197_p2                |     |        | icmp_ln433             | seteq      | auto                     | 0       |
+|    or_ln433_fu_1242_p2                  |     |        | or_ln433               | or         | auto                     | 0       |
+|    sparsemux_33_4_1_1_1_U42             |     |        | tmp_9                  | sparsemux  | compactencoding_dontcare | 0       |
+|    sparsemux_33_4_1_1_1_U43             |     |        | tmp_s                  | sparsemux  | compactencoding_dontcare | 0       |
+|    results_sign_fu_773_p3               |     |        | results_sign           | select     | auto_sel                 | 0       |
+|    icmp_ln271_fu_781_p2                 |     |        | icmp_ln271             | seteq      | auto                     | 0       |
+|    icmp_ln271_1_fu_527_p2               |     |        | icmp_ln271_1           | seteq      | auto                     | 0       |
+|    and_ln271_fu_786_p2                  |     |        | and_ln271              | and        | auto                     | 0       |
+|    icmp_ln282_fu_791_p2                 |     |        | icmp_ln282             | seteq      | auto                     | 0       |
+|    xor_ln282_fu_796_p2                  |     |        | xor_ln282              | xor        | auto                     | 0       |
+|    results_sign_1_fu_802_p2             |     |        | results_sign_1         | and        | auto                     | 0       |
+|    select_ln282_fu_1261_p3              |     |        | select_ln282           | select     | auto_sel                 | 0       |
+|    or_ln282_fu_1268_p2                  |     |        | or_ln282               | or         | auto                     | 0       |
+|    results_exp_fu_1273_p3               |     |        | results_exp            | select     | auto_sel                 | 0       |
+|    select_ln282_2_fu_1281_p3            |     |        | select_ln282_2         | select     | auto_sel                 | 0       |
+|    results_sig_fu_1288_p3               |     |        | results_sig            | select     | auto_sel                 | 0       |
+|    not_and_ln271_demorgan_fu_808_p2     |     |        | not_and_ln271_demorgan | and        | auto                     | 0       |
+|    not_and_ln271_fu_813_p2              |     |        | not_and_ln271          | xor        | auto                     | 0       |
+|    results_sign_2_fu_819_p2             |     |        | results_sign_2         | and        | auto                     | 0       |
+|    results_exp_1_fu_1296_p3             |     |        | results_exp_1          | select     | auto_sel                 | 0       |
+|    results_sig_1_fu_1303_p3             |     |        | results_sig_1          | select     | auto_sel                 | 0       |
+|   + sin_or_cos_double_Pipeline_1        | 0   |        |                        |            |                          |         |
+|     add_ln400_fu_84_p2                  |     |        | add_ln400              | add        | fabric                   | 0       |
+|     sel_tmp_fu_90_p2                    |     |        | sel_tmp                | seteq      | auto                     | 0       |
+|     out_bits_5_out                      |     |        | out_bits_5             | select     | auto_sel                 | 0       |
+|     sel_tmp2_fu_105_p2                  |     |        | sel_tmp2               | seteq      | auto                     | 0       |
+|     out_bits_4_out                      |     |        | out_bits_4             | select     | auto_sel                 | 0       |
+|     sel_tmp4_fu_120_p2                  |     |        | sel_tmp4               | seteq      | auto                     | 0       |
+|     out_bits_3_out                      |     |        | out_bits_3             | select     | auto_sel                 | 0       |
+|     icmp_ln400_fu_135_p2                |     |        | icmp_ln400             | seteq      | auto                     | 0       |
+|   + sin_or_cos_double_Pipeline_2        | 0   |        |                        |            |                          |         |
+|     icmp_ln401_fu_136_p2                |     |        | icmp_ln401             | seteq      | auto                     | 0       |
+|     add_ln401_fu_142_p2                 |     |        | add_ln401              | add        | fabric                   | 0       |
+|     sub_ln403_fu_156_p2                 |     |        | sub_ln403              | sub        | fabric                   | 0       |
+|     partselect_16ns_63ns_32ns_16_1_1_U4 |     |        | tmp_4                  | partselect | auto                     | 0       |
+|   + sin_or_cos_double_Pipeline_3        | 0   |        |                        |            |                          |         |
+|     icmp_ln414_fu_136_p2                |     |        | icmp_ln414             | seteq      | auto                     | 0       |
+|     add_ln414_fu_142_p2                 |     |        | add_ln414              | add        | fabric                   | 0       |
+|     sparsemux_9_2_32_1_1_U13            |     |        | x                      | sparsemux  | compactencoding_dontcare | 0       |
+|     ctlz_32_32_1_1_U14                  |     |        | c_4                    | ctlz       | auto                     | 0       |
+|   + sin_or_cos_double_Pipeline_4        | 0   |        |                        |            |                          |         |
+|     sparsemux_9_2_32_1_1_U25            |     |        | tmp_6                  | sparsemux  | compactencoding_dontcare | 0       |
+|     shift_3_fu_165_p2                   |     |        | shift_3                | add        | fabric                   | 0       |
+|     sub_ln423_fu_179_p2                 |     |        | sub_ln423              | sub        | fabric                   | 0       |
+|     select_ln423_fu_185_p3              |     |        | select_ln423           | select     | auto_sel                 | 0       |
+|     ashr_ln423_fu_239_p2                |     |        | ashr_ln423             | ashr       | auto_pipe                | 0       |
+|     shl_ln423_fu_245_p2                 |     |        | shl_ln423              | shl        | auto_pipe                | 0       |
+|     in_shift_fu_251_p3                  |     |        | in_shift               | select     | auto_sel                 | 0       |
+|     icmp_ln424_fu_193_p2                |     |        | icmp_ln424             | setne      | auto                     | 0       |
+|     add_ln421_fu_199_p2                 |     |        | add_ln421              | add        | fabric                   | 0       |
+|     or_ln424_fu_217_p2                  |     |        | or_ln424               | or         | auto                     | 0       |
++-----------------------------------------+-----+--------+------------------------+------------+--------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------------------------+-----------+-----------+------+------+--------+--------------------------------+--------+---------+------------------+
+| Name                                | Usage     | Type      | BRAM | URAM | Pragma | Variable                       | Impl   | Latency | Bitwidth, Depth, |
+|                                     |           |           |      |      |        |                                |        |         | Banks            |
++-------------------------------------+-----------+-----------+------+------+--------+--------------------------------+--------+---------+------------------+
+| + trig_approx                       |           |           | 8    | 0    |        |                                |        |         |                  |
+|   CTRL_s_axi_U                      | interface | s_axilite |      |      |        |                                |        |         |                  |
+|  + sin_or_cos_double_s              |           |           | 8    | 0    |        |                                |        |         |                  |
+|    ref_4oPi_table_256_U             | rom_1p    |           | 8    |      |        | ref_4oPi_table_256             | auto   | 1       | 256, 10, 1       |
+|    fourth_order_double_sin_cos_K0_U | rom_1p    |           |      |      | pragma | fourth_order_double_sin_cos_K0 | lutram | 1       | 59, 256, 1       |
+|    fourth_order_double_sin_cos_K1_U | rom_1p    |           |      |      | pragma | fourth_order_double_sin_cos_K1 | lutram | 1       | 52, 256, 1       |
+|    fourth_order_double_sin_cos_K2_U | rom_1p    |           |      |      | pragma | fourth_order_double_sin_cos_K2 | lutram | 1       | 44, 256, 1       |
+|    fourth_order_double_sin_cos_K3_U | rom_1p    |           |      |      | pragma | fourth_order_double_sin_cos_K3 | lutram | 1       | 33, 256, 1       |
+|    fourth_order_double_sin_cos_K4_U | rom_1p    |           |      |      | pragma | fourth_order_double_sin_cos_K4 | lutram | 1       | 25, 256, 1       |
++-------------------------------------+-----------+-----------+------+------+--------+--------------------------------+--------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+------------------------------------+---------------------------------------------------------------------------+
+| Type      | Options                            | Location                                                                  |
++-----------+------------------------------------+---------------------------------------------------------------------------+
+| interface | s_axilite port=angle bundle=CTRL   | ../../TrignoApproxHSL/trig_src_inbuilt_cos.cpp:11 in trig_approx, angle   |
+| interface | s_axilite port=cos_out bundle=CTRL | ../../TrignoApproxHSL/trig_src_inbuilt_cos.cpp:12 in trig_approx, cos_out |
+| interface | s_axilite port=return bundle=CTRL  | ../../TrignoApproxHSL/trig_src_inbuilt_cos.cpp:13 in trig_approx, return  |
++-----------+------------------------------------+---------------------------------------------------------------------------+
+
+
