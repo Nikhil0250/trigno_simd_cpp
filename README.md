@@ -1,4 +1,4 @@
-\# Trigonometric SIMD Benchmark - C++ Implementation
+# Trigonometric SIMD Benchmark - C++ Implementation
 
 This repository accompanies the research paper **"A Novel SIMD-Optimized Implementation for Fast and Memory-Efficient Trigonometric Computation"** by **Nikhil Dev Goyal** and **Parth Arora**.
 
@@ -60,7 +60,7 @@ After compilation, run:
 bin\trigno_benchmark.exe
 ```
 ✅ This will generate the **benchmark results in CSV format** inside the `data/` folder.
-
+✅ A detailed performance summary is displayed in the terminal upon execution.
 ---
 
 ## 📊 Reproducing Research Paper Results
@@ -90,13 +90,59 @@ Each CSV contains:
 ## 📜 Project Structure
 ```
 trigno_simd_cpp/
-│── include/               # Header files (.h)
-│── src/                   # Source files (.cpp)
-│── data/                  # CSV results
-│── vitis_hls_code/        # FPGA HLS code
-│── vitis_hls_reports/     # Reports
-│── CMakeLists.txt         # CMake configuration
-│── README.md              # Documentation
+│── include/                      # Header files (.h)
+│   ├── angle_reduction.h          # Header for angle reduction optimizations
+│   ├── proposed_trigno.h          # Header for **proposed optimized trigonometric functions**
+│   ├── taylorsimd.h               # Header for SIMD-optimized Taylor series functions
+│
+│── src/                          # Source files (.cpp)
+│   ├── angle_reduction.cpp        # Implements angle reduction techniques
+│   ├── benchmark.cpp              # Main benchmarking script 
+│   ├── proposed_trigno.cpp        # Implements **proposed SIMD-optimized trigonometric functions**
+│   ├── taylorsimd.cpp             # SIMD-optimized Taylor series calculations
+│
+│── data/                         # Computed benchmark results (CSV files)
+│   ├── proposed_sin.csv           # Benchmark results for proposed sin()
+│   ├── proposed_cos.csv           # Benchmark results for proposed cos()
+│   ├── proposed_tan.csv           # Benchmark results for proposed tan()
+│   ├── taylorcos5.csv             # Taylor series approximation (5 terms) for cos()
+│   ├── taylorsin5.csv             # Taylor series approximation (5 terms) for sin()
+│   ├── taylortan5.csv             # Taylor series approximation (5 terms) for tan()
+│   ├── ...                        # Other benchmark results
+│
+│── vitis_hls_code/               # FPGA HLS implementations (for hardware benchmarks)
+│   ├── myfunc_cos_SIMD.cpp        # HLS implementation for SIMD-optimized cos()
+│   ├── myfunc_sin_SIMD.cpp        # HLS implementation for SIMD-optimized sin()
+│   ├── myfunc_tan_SIMD.cpp        # HLS implementation for SIMD-optimized tan()
+│   ├── taylor_cos_SIMD.cpp        # Taylor series-based cos() for FPGA
+│   ├── taylor_sin_SIMD.cpp        # Taylor series-based sin() for FPGA
+│   ├── taylor_tan_SIMD.cpp        # Taylor series-based tan() for FPGA
+│   ├── testbench_myfunc_cos_SIMD.cpp  # Testbench for cos()
+│   ├── testbench_myfunc_sin_SIMD.cpp  # Testbench for sin()
+│   ├── testbench_myfunc_tan_SIMD.cpp  # Testbench for tan()
+│   ├── testbench_taylor_cos_SIMD.cpp  # Testbench for Taylor cos()
+│   ├── testbench_taylor_sin_SIMD.cpp  # Testbench for Taylor sin()
+│   ├── testbench_taylor_tan_SIMD.cpp  # Testbench for Taylor tan()
+│
+│── vitis_hls_reports/            # Reports from FPGA synthesis & simulations
+│   ├── report_myfunc_cos_SIMD/    # Reports for myfunc_cos_SIMD
+│   ├── report_myfunc_sin_SIMD/    # Reports for myfunc_sin_SIMD
+│   ├── report_myfunc_tan_SIMD/    # Reports for myfunc_tan_SIMD
+│   ├── report_taylor_cos_SIMD/    # Reports for Taylor cos() SIMD
+│   ├── report_taylor_sin_SIMD/    # Reports for Taylor sin() SIMD
+│   ├── report_taylor_tan_SIMD/    # Reports for Taylor tan() SIMD
+│   ├── report_cos_inbuilt/        # Baseline hardware results for standard cos()
+│   ├── report_sin_inbuilt/        # Baseline hardware results for standard sin()
+│   ├── report_tan_inbuilt/        # Baseline hardware results for standard tan()
+│
+│── bin/                          # Compiled executables (generated after build)
+│   ├── trigno_benchmark.exe       # Final compiled executable
+│
+│── CMakeLists.txt                 # CMake build configuration
+│── README.md                      # Project documentation
+│── LICENSE                        # License file
+│── .gitignore                     # Files to ignore in Git
+
 ```
 
 ---
