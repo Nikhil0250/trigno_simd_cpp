@@ -6,7 +6,13 @@
 #include <vector>
 #include <fstream>
 #include <string> 
-
+#include <sys/stat.h>  // For `stat()` to check directory existence
+#ifdef _WIN32
+    #include <direct.h>  // For `_mkdir()` on Windows
+    #define mkdir _mkdir
+#else
+    #include <unistd.h>  // For POSIX `mkdir()`
+#endif
 #include "proposed_trigno.h"
 #include "taylorsimd.h"
 
@@ -42,10 +48,22 @@ struct Bench_Response {
     int equals;
 };
 
+
+
+
+
+
 void save_performance_data(const std::vector<BenchmarkResult>& results, const char* method_name) {
-    std::string filename = std::string(method_name) + ".csv";  
+    std::string directory = "../data/";  // Ensure it saves outside `build/`
+    std::string filename = directory + std::string(method_name) + ".csv";  
+
+    // Ensure the "data" directory exists before writing the file
+    struct stat info;
+    if (stat(directory.c_str(), &info) != 0) {  // Check if directory exists
+        mkdir(directory.c_str());  // Create directory if it doesn't exist
+    }
+
     std::ofstream file(filename);
-    
     if (!file.is_open()) {
         std::cerr << "Error opening file: " << filename << std::endl;
         return;
@@ -79,10 +97,12 @@ void save_performance_data(const std::vector<BenchmarkResult>& results, const ch
              << diff << ","
              << speedup_ratio << "\n";
     }
-    
+
     file.close();
     std::cout << "Saved performance data for " << method_name << " to " << filename << std::endl;
 }
+
+
 
 
 template<typename Func>
@@ -164,7 +184,7 @@ Bench_Response run_benchmark(const char* func_name, FuncPtr std_func, FuncPtr my
     Local_Entry.losses = losses;
     Local_Entry.equals = equals;
 
-    // save_performance_data(results, func_name); // to save data to csv files
+    save_performance_data(results, func_name); // to save data to csv files
 
     return Local_Entry;
 }

@@ -1,2 +1,20 @@
-.vscode
-output.exe
+# Ignore VS Code settings
+.vscode/
+
+# Ignore all build files
+/build/
+/bin/
+/CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+# Ignore compiled binaries and executables
+*.exe
+*.out
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
