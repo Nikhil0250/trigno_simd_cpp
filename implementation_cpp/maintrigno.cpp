@@ -7,7 +7,7 @@
 #include <fstream>
 #include <string> 
 
-#include "mytrigno.h"
+#include "proposed_trigno.h"
 #include "taylorsimd.h"
 
 using namespace std;
@@ -43,7 +43,7 @@ struct Bench_Response {
 };
 
 void save_performance_data(const std::vector<BenchmarkResult>& results, const char* method_name) {
-    std::string filename = std::string(method_name) + "_performance.csv";  
+    std::string filename = std::string(method_name) + ".csv";  
     std::ofstream file(filename);
     
     if (!file.is_open()) {
@@ -164,7 +164,7 @@ Bench_Response run_benchmark(const char* func_name, FuncPtr std_func, FuncPtr my
     Local_Entry.losses = losses;
     Local_Entry.equals = equals;
 
-    // save_performance_data(results, func_name); // to save data to csv file for making graphs in python
+    // save_performance_data(results, func_name); // to save data to csv files
 
     return Local_Entry;
 }
@@ -236,11 +236,11 @@ int main() {
     Final_Total_Stats taylor_cos9_stats;
     Final_Total_Stats taylor_tan9_stats;
     
-    Bench_Response sin_bench = run_benchmark("mysin", sin, my_sin);
+    Bench_Response sin_bench = run_benchmark("proposed_sin", sin, proposed_sin);
     updateStats(sin_stats, sin_bench);
-    Bench_Response cos_bench = run_benchmark("mycos", cos, my_cos);
+    Bench_Response cos_bench = run_benchmark("proposed_cos", cos, proposed_cos);
     updateStats(cos_stats, cos_bench);
-    Bench_Response tan_bench = run_benchmark("mytan", tan, my_tan);
+    Bench_Response tan_bench = run_benchmark("proposed_tan", tan, proposed_tan);
     updateStats(tan_stats, tan_bench);
     Bench_Response taylor_sin5_bench = run_benchmark("taylorsin5", sin, taylorSin5);
     updateStats(taylor_sin5_stats, taylor_sin5_bench);

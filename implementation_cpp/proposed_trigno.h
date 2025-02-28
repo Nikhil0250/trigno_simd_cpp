@@ -36,8 +36,8 @@ inline __m256d sin_helper_SIMD(__m256d a, __m256d b, __m256d x, __m256d y, __m25
 inline __m256d cos_helper_SIMD(__m256d c, __m256d d,  __m256d x, __m256d y, __m256d z, __m256d ang);
 inline __m256d tan_helper_SIMD(__m256d a, __m256d b,__m256d c, __m256d d, __m256d ang);
 
-double my_sin(double ang);
-double my_cos(double ang);
-double my_tan(double ang);
+double proposed_sin(double ang);
+double proposed_cos(double ang);
+double proposed_tan(double ang);
 
 #endif  // MYFUNCTIONS_H

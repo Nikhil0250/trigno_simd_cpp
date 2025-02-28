@@ -1,4 +1,4 @@
-#include "mytrigno.h"
+#include "proposed_trigno.h"
 #include<limits>
 #include <immintrin.h> // For AVX intrinsics
 
@@ -92,7 +92,7 @@ return _mm256_mul_pd(poly, _mm256_mul_pd(tmp, tmp));
 // Exposed Functions (scalar API that internally uses SIMD)
 //=============================================================================
 
-double my_sin(double ang) {
+double proposed_sin(double ang) {
     // Broadcast the scalar angle into all 4 lanes.
     __m256d ang_vec = _mm256_set1_pd(ang);
     // Use the SIMD branchless angle reduction for sin.
@@ -117,7 +117,7 @@ double my_sin(double ang) {
     return result;
 }
 
-double my_cos(double ang) {
+double proposed_cos(double ang) {
     __m256d ang_vec = _mm256_set1_pd(ang);
     Vec2 reduced = reduce_angle_cos_SIMD(ang_vec);
     double red_scalar;
@@ -139,7 +139,7 @@ double my_cos(double ang) {
     return result;
 }
 
-double my_tan(double ang) {
+double proposed_tan(double ang) {
     __m256d ang_vec = _mm256_set1_pd(ang);
     Vec2 reduced = reduce_angle_tan_SIMD(ang_vec);
     double red_scalar;
