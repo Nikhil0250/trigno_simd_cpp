@@ -111,23 +111,23 @@ trigno_simd_cpp/
 │   ├── ...                        # Other benchmark results
 │
 │── vitis_hls_code/               # FPGA HLS implementations (for hardware benchmarks)
-│   ├── myfunc_cos_SIMD.cpp        # HLS implementation for SIMD-optimized cos()
-│   ├── myfunc_sin_SIMD.cpp        # HLS implementation for SIMD-optimized sin()
-│   ├── myfunc_tan_SIMD.cpp        # HLS implementation for SIMD-optimized tan()
+│   ├── proposed_cos_SIMD.cpp        # HLS implementation for SIMD-optimized Proposed cos()
+│   ├── proposed_sin_SIMD.cpp        # HLS implementation for SIMD-optimized Proposed sin()
+│   ├── proposed_tan_SIMD.cpp        # HLS implementation for SIMD-optimized Proposed tan()
 │   ├── taylor_cos_SIMD.cpp        # Taylor series-based cos() for FPGA
 │   ├── taylor_sin_SIMD.cpp        # Taylor series-based sin() for FPGA
 │   ├── taylor_tan_SIMD.cpp        # Taylor series-based tan() for FPGA
-│   ├── testbench_myfunc_cos_SIMD.cpp  # Testbench for cos()
-│   ├── testbench_myfunc_sin_SIMD.cpp  # Testbench for sin()
-│   ├── testbench_myfunc_tan_SIMD.cpp  # Testbench for tan()
+│   ├── testbench_proposed_cos_SIMD.cpp  # Testbench for cos()
+│   ├── testbench_proposed_sin_SIMD.cpp  # Testbench for sin()
+│   ├── testbench_proposed_tan_SIMD.cpp  # Testbench for tan()
 │   ├── testbench_taylor_cos_SIMD.cpp  # Testbench for Taylor cos()
 │   ├── testbench_taylor_sin_SIMD.cpp  # Testbench for Taylor sin()
 │   ├── testbench_taylor_tan_SIMD.cpp  # Testbench for Taylor tan()
 │
 │── vitis_hls_reports/            # Reports from FPGA synthesis & simulations
-│   ├── report_myfunc_cos_SIMD/    # Reports for myfunc_cos_SIMD
-│   ├── report_myfunc_sin_SIMD/    # Reports for myfunc_sin_SIMD
-│   ├── report_myfunc_tan_SIMD/    # Reports for myfunc_tan_SIMD
+│   ├── report_proposed_cos_SIMD/    # Reports for proposed_cos_SIMD
+│   ├── report_proposed_sin_SIMD/    # Reports for proposed_sin_SIMD
+│   ├── report_proposed_tan_SIMD/    # Reports for proposed_tan_SIMD
 │   ├── report_taylor_cos_SIMD/    # Reports for Taylor cos() SIMD
 │   ├── report_taylor_sin_SIMD/    # Reports for Taylor sin() SIMD
 │   ├── report_taylor_tan_SIMD/    # Reports for Taylor tan() SIMD
