@@ -15,6 +15,7 @@
 #endif
 #include "proposed_trigno.h"
 #include "taylorsimd.h"
+#include "cordic_trig.h"
 
 using namespace std;
 using namespace std::chrono;
@@ -255,7 +256,10 @@ int main() {
     Final_Total_Stats taylor_sin9_stats;
     Final_Total_Stats taylor_cos9_stats;
     Final_Total_Stats taylor_tan9_stats;
-    
+    Final_Total_Stats cordic_sin_stats;
+    Final_Total_Stats cordic_cos_stats;
+    Final_Total_Stats cordic_tan_stats;
+
     Bench_Response sin_bench = run_benchmark("proposed_sin", sin, proposed_sin);
     updateStats(sin_stats, sin_bench);
     Bench_Response cos_bench = run_benchmark("proposed_cos", cos, proposed_cos);
@@ -280,7 +284,12 @@ int main() {
     updateStats(taylor_cos9_stats, taylor_cos9_bench);
     Bench_Response taylor_tan9_bench = run_benchmark("taylortan9", tan, maclaurinTan9);
     updateStats(taylor_tan9_stats, taylor_tan9_bench);
-    
+    Bench_Response cordic_sin_bench = run_benchmark("cordic_sin", sin, cordic_sin);
+    updateStats(cordic_sin_stats, cordic_sin_bench);
+    Bench_Response cordic_cos_bench = run_benchmark("cordic_cos", cos, cordic_cos);
+    updateStats(cordic_cos_stats, cordic_cos_bench);
+    Bench_Response cordic_tan_bench = run_benchmark("cordic_tan", tan, cordic_tan);
+    updateStats(cordic_tan_stats, cordic_tan_bench);
      
     printStats(sin_stats, "SINE");
     printStats(cos_stats, "COSINE");
@@ -294,6 +303,10 @@ int main() {
     printStats(taylor_sin9_stats, "TAYLOR 9 SINE");
     printStats(taylor_cos9_stats, "TAYLOR 9 COSINE");
     printStats(taylor_tan9_stats, "TAYLOR 9 TANGENT");
+    printStats(cordic_sin_stats, "CORDIC SINE");
+    printStats(cordic_cos_stats, "CORDIC COSINE");
+    printStats(cordic_tan_stats, "CORDIC TANGENT");
+
 
     
     return 0;
