@@ -161,28 +161,42 @@ double proposed_cos(double ang) {
 // Function to compute the tangent of an angle using a SIMD-based approximation.
 // Takes a scalar angle in radians and returns its tangent value.
 double proposed_tan(double ang) {
-    __m256d ang_vec = _mm256_set1_pd(ang);  // Broadcast scalar angle to all four lanes of a 256-bit vector
-    Vec2 reduced = reduce_angle_tan_SIMD(ang_vec);  // Reduce angle using SIMD tangent reduction
-    double red_scalar;  // Scalar variable to hold the reduced angle
-    _mm256_storeu_pd(&red_scalar, reduced.red);  // Extract reduced angle (only first element used)
+    __m256d ang_vec = _mm256_set1_pd(ang);
+    Vec2 reduced = reduce_angle_tan_SIMD(ang_vec);
     
-    // Check if the reduced angle is near π/2 to handle singularity
-    if (fabs(red_scalar - M_PID / 2.0) < 1e-3)
-        return std::numeric_limits<double>::infinity();  // Return infinity for near-vertical asymptote
-    
-    int idx = static_cast<int>(red_scalar / 0.261);  // Compute parameter index based on interval width 0.261
-    TanHelperParams p = tanparams[idx];  // Select parameters for the computed index
-    
-    // Broadcast parameters to 256-bit vectors
+    double red_scalar;
+    _mm256_storeu_pd(&red_scalar, reduced.red);
+
+    int idx = static_cast<int>(red_scalar / 0.261);
+    TanHelperParams p = tanparams[idx];
+
     __m256d a = _mm256_set1_pd(p.a);
     __m256d b = _mm256_set1_pd(p.b);
     __m256d c = _mm256_set1_pd(p.c);
     __m256d d = _mm256_set1_pd(p.d);
+
+    __m256d res_vec = tan_helper_SIMD(a, b, c, d, reduced.red);
+    res_vec = _mm256_mul_pd(res_vec, reduced.sign);
+
+    // --- ADDED MASKING LOGIC HERE ---
     
-    __m256d res_vec = tan_helper_SIMD(a, b, c, d, reduced.red);  // Compute tangent using SIMD helper
-    res_vec = _mm256_mul_pd(res_vec, reduced.sign);  // Apply sign adjustment from angle reduction
+    // 1. Calculate the difference: (angle - pi/2)
+    __m256d diff = _mm256_sub_pd(reduced.red, _mm256_set1_pd(M_PI / 2.0));
     
-    double result;  // Scalar variable to hold the final result
-    _mm256_storeu_pd(&result, res_vec);  // Extract result (only first element used)
-    return result;  // Return the computed tangent value
+    // 2. Absolute value via bitwise AND-NOT (clears the sign bit)
+    //    We use a mask of all 1s except the sign bit (0x7FFFF...)
+    __m256d abs_mask = _mm256_castsi256_pd(_mm256_set1_epi64x(0x7FFFFFFFFFFFFFFF)); 
+    __m256d abs_diff = _mm256_and_pd(diff, abs_mask);
+
+    // 3. Compare: Is |diff| < 1e-3?
+    __m256d threshold = _mm256_set1_pd(1e-3);
+    __m256d is_singular = _mm256_cmp_pd(abs_diff, threshold, _CMP_LT_OQ);
+
+    // 4. Blend: If singular, choose Infinity. Otherwise, choose the calculated result.
+    __m256d infinity = _mm256_set1_pd(std::numeric_limits<double>::infinity());
+    __m256d final_vec = _mm256_blendv_pd(res_vec, infinity, is_singular);
+
+    double result;
+    _mm256_storeu_pd(&result, final_vec);
+    return result;
 }
