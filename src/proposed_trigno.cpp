@@ -181,7 +181,7 @@ double proposed_tan(double ang) {
     // --- ADDED MASKING LOGIC HERE ---
     
     // 1. Calculate the difference: (angle - pi/2)
-    __m256d diff = _mm256_sub_pd(reduced.red, _mm256_set1_pd(M_PI / 2.0));
+    __m256d diff = _mm256_sub_pd(reduced.red, _mm256_set1_pd(M_PID / 2.0));
     
     // 2. Absolute value via bitwise AND-NOT (clears the sign bit)
     //    We use a mask of all 1s except the sign bit (0x7FFFF...)
