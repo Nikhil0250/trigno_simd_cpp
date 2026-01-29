@@ -1,10 +1,12 @@
 # Trigonometric SIMD Benchmark - C++ Implementation
 
-This repository accompanies the research paper **"A Novel SIMD-Optimized Implementation for Fast and Memory-Efficient Trigonometric Computation"** by **Nikhil Dev Goyal** and **Parth Arora**.
+This repository accompanies the research paper **"A SIMD-Optimized Approximate Implementation for Fast and Memory-Efficient Trigonometric Computation"** by **Nikhil Dev Goyal** and **Parth Arora**.
 
-📄 **Reference Research Paper:**  
+📄 **Preprint Paper**  
 📌 **DOI:** [https://doi.org/10.48550/arXiv.2502.10831](https://doi.org/10.48550/arXiv.2502.10831)  
-📌 **Full Paper:** [arXiv Link](https://arxiv.org/html/2502.10831v1)  
+📌 **Full Preprint Paper:** [arXiv Link](https://arxiv.org/html/2502.10831v1)  
+
+Note : Pre-print version might be outdated
 
 The paper introduces a set of trigonometric functions that are significantly faster than standard C++ implementations, achieving up to a **5× speed increase**. These functions are also highly **memory-efficient**, requiring no precomputations, making them ideal for hardware implementations on **low-end FPGAs and MCUs**. Benchmark comparisons demonstrate substantial **hardware resource reductions**, including DSPs, LUTs, and flip-flops, when compared to built-in functions.
 
