@@ -1,5 +1,7 @@
 # Trigonometric SIMD Benchmark - C++ Implementation
 
+Disclaimer : This code is obsolete. SOTA FastMath functions now exist at [hwy/contrib/math/fast_math-inl.h](https://github.com/google/highway/blob/master/hwy/contrib/math/fast_math-inl.h) 
+
 This repository accompanies the research paper **"A SIMD-Optimized Approximate Implementation for Fast and Memory-Efficient Trigonometric Computation"** by **Nikhil Dev Goyal** and **Parth Arora**.
 
 📄 **Preprint Paper**  
